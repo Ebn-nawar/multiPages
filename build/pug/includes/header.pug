@@ -1,0 +1,91 @@
+// start of header
+header
+    //- header top
+    .container
+        .header__nav
+            .d-flex.justify-content-between 
+                .offer_txt
+                    p.py-2.m-0 Lorem ipsum dolor sit amet.
+                .control.d-flex.justify-content-center
+                    select.form-select.mx-2.border-0(aria-label='Default select example')
+                        option(value='1') English
+                        option(value='2') francace
+                    select.form-select.mx-2.border-0(aria-label='Default select example')
+                        option(value='1') Dolar $
+                        option(value='2') Euro €
+    hr.p-0.m-1
+    //- header body
+    .container
+        .header__body.py-3
+            .d-flex.justify-content-between.flex-wrap
+                .logo.col-12.col-md-2.text-center.text-md-start.my-md-0.my-2
+                    img(src="http://demo.templatin.com/megashop17/img/megashop-logo-1492236279.jpg" alt="" srcset="")
+                .search.col-12.col-md-6
+                    form.d-flex.p-2.border.border-dark.rounded
+                        input.form-control.me-2.border-0(type='search' placeholder='Search' aria-label='Search')
+                        button.btn.btn-outline-success(type='submit') Search
+                .button.col-2.d-none.d-md-block
+                    .dropdown
+                        button#dropdownMenuButton1.btn.btn-light.border.border-dark(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                            i.fa-solid.fa-user  
+                            |  Account 
+                        ul.dropdown-menu(aria-labelledby='dropdownMenuButton1')
+                            li
+                                a.dropdown-item(href='#') 
+                                    i.fa-solid.fa-arrow-right-to-bracket
+                                    |  signin
+                            li
+                                a.dropdown-item(href='#') 
+                                    i.fa-solid.fa-user-plus
+                                    |  regiester
+    //- main nav bar 
+    nav.navbar.navbar-expand-lg.navbar-light.bg-primary
+        .container
+            ul.navbar-nav.px-md-3.px-1.me-auto.mb-2.mb-lg-0
+                li.nav-item.dropdown
+                    a#navbarDropdown.btn-danger.nav-link(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+                        | Categories <i class="pt-1 float-end fa-solid fa-bars d-none d-md-block"></i>
+                    ul.dropdown-menu(aria-labelledby='navbarDropdown')
+                        li
+                            a.dropdown-item(href='#') Action
+                        li
+                            a.dropdown-item(href='#') Another action
+                        li
+                            hr.dropdown-divider
+                        li
+                            a.dropdown-item(href='#') Something else here
+            button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbarSupportedContent.collapse.navbar-collapse
+                ul.navbar-nav.me-auto.mb-2.mb-lg-0
+                    li.nav-item
+                        a.nav-link.px-3.active(aria-current='page' href='#') Home
+                    li.nav-item
+                        a.nav-link.px-3(href='#') Link
+                    li.nav-item
+                        a.nav-link.px-3(href='#') New products
+                    li.nav-item
+                        a.nav-link.px-3(href='#') Brands
+                    li.nav-item
+                        a.nav-link.px-3(href='#') About us
+                    li 
+                        .button.col-2.d-md-none.d-block
+                            .dropdown
+                                button#dropdownMenuButton1.btn.btn-light.border.border-dark(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                    i.fa-solid.fa-user  
+                                    |  Account 
+                                ul.dropdown-menu(aria-labelledby='dropdownMenuButton1')
+                                    li
+                                        a.dropdown-item(href='#') 
+                                            i.fa-solid.fa-arrow-right-to-bracket
+                                            |  signin
+                                    li
+                                        a.dropdown-item(href='#') 
+                                            i.fa-solid.fa-user-plus
+                                            |  regiester
+                ul.navbar-nav.px-3.ms-auto.mb-2.mb-lg-0
+                    li.nav-item 
+                        a.nav-link.btn-danger.px-2(href='#') 
+                            i.fa-solid.fa-cart-shopping 
+                            |  0
+// end of header

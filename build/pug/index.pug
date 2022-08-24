@@ -35,49 +35,23 @@ html(lang="en")
                         img.w-100(src="http://demo.templatin.com/megashop17/modules/tptnsubbanner/images/sample-4.jpg" alt="" srcset="")
                     .col-6.col-md-3.text-center.my-1
                         img.w-100(src="http://demo.templatin.com/megashop17/modules/tptnsubbanner/images/sample-4.jpg" alt="" srcset="")
-            //- popular products
-            .main__categories.container.my-5 
-                h3.border-bottom.border-2.pb-2 popular prodacts
-                include includes/main__categories
-            //- New products
+            //- Top categories
             .main__categories.container.my-5
-                h3.border-bottom.border-2.pb-2 New prodacts
-                include includes/main__categories
+                each val in ["popular products", "New products"]
+                    h3.border-bottom.border-2.pb-2= val
+                    include includes/main__categories
             //- speacial products
             .main__speacial.container.my-5 
                 .row 
                     .col-12.col-md-6.my-2
                         img(src="http://demo.templatin.com/megashop17/modules/tptnbotbanner/images/sample-1.jpg")
                     .col-12.col-md-6.my-2
-                        img(src="http://demo.templatin.com/megashop17/modules/tptnbotbanner/images/sample-1.jpg")  
-            //- Elctronic
+                        img(src="http://demo.templatin.com/megashop17/modules/tptnbotbanner/images/sample-2.jpg")  
+            //- Categories
             .main__categories.container.my-5
-                h3.border-bottom.border-2.pb-2 Elctronic
-                include includes/main__categories
-            //- Clothes
-            .main__categories.container.my-5
-                h3.border-bottom.border-2.pb-2 Clothes
-                include includes/main__categories
-            //- Brands
-            .main__categories.container.my-5
-                h3.border-bottom.border-2.pb-2 Brands
-                .owl-carousel.mini.owl-theme
-                    .item.p-1
-                        img(src="http://demo.templatin.com/megashop17/img/m/2-medium_default.jpg")
-                    .item.p-1
-                        img(src="http://demo.templatin.com/megashop17/img/m/2-medium_default.jpg")
-                    .item.p-1
-                        img(src="http://demo.templatin.com/megashop17/img/m/2-medium_default.jpg")
-                    .item.p-1
-                        img(src="http://demo.templatin.com/megashop17/img/m/2-medium_default.jpg")
-                    .item.p-1
-                        img(src="http://demo.templatin.com/megashop17/img/m/2-medium_default.jpg")
-                    .item.p-1
-                        img(src="http://demo.templatin.com/megashop17/img/m/2-medium_default.jpg")
-                    .item.p-1
-                        img(src="http://demo.templatin.com/megashop17/img/m/2-medium_default.jpg")
-                    .item.p-1
-                        img(src="http://demo.templatin.com/megashop17/img/m/2-medium_default.jpg")
+                each val in ["speacial products", "Elctronic", "Clothes"]
+                    h3.border-bottom.border-2.pb-2= val
+                    include includes/main__categories
             //- Block
             .main__categories.container.my-5
                 h3.border-bottom.border-2.pb-2 Custom Content Block

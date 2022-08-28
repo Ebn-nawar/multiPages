@@ -1,0 +1,36 @@
+extends ../layouts/main.pug
+block meta
+    include ../includes/meta.pug
+block links
+    - var path = "..";
+    include ../includes/links.pug
+block title
+    - var title = 'Login to your account';
+    title= title
+block header
+    include ../includes/header.pug
+block main 
+    main
+        .container.p-2
+            include ../includes/roadmap.pug
+            h4.pb-2 Login to your account
+            .border.border-1.p-2
+                form
+                    .row.mb-3.justify-content-center
+                        .col-12.col-md-2
+                            label.form-label(for='exampleInputEmail1') Email address
+                        .col-12.col-md-8
+                            input#exampleInputEmail1.form-control(type='email' aria-describedby='emailHelp')
+                    .row.mb-3.justify-content-center 
+                        .col-12.col-md-2
+                            label.form-label(for='exampleInputPassword1') Password
+                        .col-12.col-md-8
+                            input#exampleInputPassword1.form-control(type='password')
+                        a.text-center.py-2(href="") forget your password
+                        a.btn.btn-danger.text-center.col-4.col-md-2(type='submit') Submit
+                        a.text-center.py-2(href="register.html") No account ? create one here
+
+block footer
+    include ../includes/footer.pug
+block scripts
+    include ../includes/scripts.pug

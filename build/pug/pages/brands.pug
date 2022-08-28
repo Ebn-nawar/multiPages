@@ -1,0 +1,25 @@
+extends ../layouts/main.pug
+block meta
+    include ../includes/meta.pug
+block links
+    - var path = "..";
+    include ../includes/links.pug
+block title
+    - var title = 'Brands';
+    title= title
+block header
+    include ../includes/header.pug
+block main 
+    main
+        .container.p-2
+            include ../includes/roadmap.pug
+            - var brandArr = [ "2" , "4.5" , "3.5" , "5" , "4" , "3" , "4"]
+            h4.py-3 Brands
+            .row 
+                each card in brandArr
+                    .col-6.col-sm-3.col-md-2
+                        img(src="http://demo.templatin.com/megashop17/img/m/3.jpg" , width="90%" , alt=brandArr[i])
+block footer
+    include ../includes/footer.pug
+block scripts
+    include ../includes/scripts.pug

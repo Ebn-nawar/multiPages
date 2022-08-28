@@ -1,0 +1,51 @@
+extends ../layouts/main.pug
+block meta
+    include ../includes/meta.pug
+block links
+    - var path = "..";
+    include ../includes/links.pug
+block title
+    - var title = 'New products';
+    title= title
+block header
+    include ../includes/header.pug
+block main 
+    main
+        .container.p-2
+            include ../includes/roadmap.pug
+            - var cardArr = [ "(2)" , "(4.5)" , "(3.5)" , "(5)" , "(4)" , "(3)"]
+            h4.py-3 New products
+            .alert.alert-secondary
+                | There are #{cardArr.length} products.
+            .row
+                each card in cardArr
+                    .item.p-1.col-12.col-sm-6.col-md-4
+                        .card.m-auto(style='width: 18rem;')
+                            .d-flex.px-2
+                                .details
+                                    span.badge.bg-success Success
+                                    span.badge.bg-danger Danger
+                                .card__img
+                                    img.card-img-top(src='http://demo.templatin.com/megashop17/18-large_default/smart-casual-men-sneakers.jpg' , width='220px' , height='220px')
+                                .icons.mx-2
+                                    .icon.bg-secondary.p-1
+                                        a(href="") 
+                                            i.fa-solid.fa-heart.link-light
+                            .card-body
+                                p.text-center.link-primary
+                                    | Some quick example text .
+                                .d-flex.justify-content-center
+                                    p.text-decoration-line-through.px-1 $30.21
+                                    p.text-center.link-danger.fst-normal.px-1 $30.21
+                                .d-flex.justify-content-center
+                                    p.text-center
+                                        i.fa-solid.fa-star
+                                        i.fa-solid.fa-star
+                                        i.fa-solid.fa-star
+                                        i.fa-solid.fa-star
+                                        i.fa-solid.fa-star
+                                    span= (card)
+block footer
+    include ../includes/footer.pug
+block scripts
+    include ../includes/scripts.pug

@@ -31,11 +31,11 @@ header
                             |  Account 
                         ul.dropdown-menu(aria-labelledby='dropdownMenuButton1')
                             li
-                                a.dropdown-item(href='#') 
+                                a.dropdown-item(href=`${path}/pages/login.html`) 
                                     i.fa-solid.fa-arrow-right-to-bracket
                                     |  signin
                             li
-                                a.dropdown-item(href='#') 
+                                a.dropdown-item(href=`${path}/pages/register.html`) 
                                     i.fa-solid.fa-user-plus
                                     |  regiester
     //- main nav bar 
@@ -59,15 +59,15 @@ header
             #navbarSupportedContent.collapse.navbar-collapse
                 ul.navbar-nav.me-auto.mb-2.mb-lg-0
                     li.nav-item
-                        a.nav-link.px-3.active(aria-current='page' href='#') Home
+                        a.nav-link.px-3.active(aria-current='page' href=`${path}/../`) Home
                     li.nav-item
-                        a.nav-link.px-3(href='#') Link
+                        a.nav-link.px-3(href=`${path}/pages/newProducts.html`) new products
                     li.nav-item
-                        a.nav-link.px-3(href='#') New products
+                        a.nav-link.px-3(href=`${path}/pages/brands.html`) Brands
                     li.nav-item
-                        a.nav-link.px-3(href='#') Brands
+                        a.nav-link.px-3(href=`${path}/pages/about.html`) About us
                     li.nav-item
-                        a.nav-link.px-3(href='#') About us
+                        a.nav-link.px-3(href='#') link
                     li 
                         .button.col-2.d-md-none.d-block
                             .dropdown

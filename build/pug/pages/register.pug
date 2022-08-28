@@ -1,0 +1,59 @@
+extends ../layouts/main.pug
+block meta
+    include ../includes/meta.pug
+block links
+    - var path = "..";
+    include ../includes/links.pug
+block title
+    - var title = 'Create an account';
+    title= title
+block header
+    include ../includes/header.pug
+block main 
+    main
+        .container.p-2
+            include ../includes/roadmap.pug
+            h4.pb-2 Create an account
+            .border.border-1.p-2
+                form
+                    p.py-2 Already have an account? <a href="login.html"> Log in instead! </a>
+                    .form-check.form-check-inline
+                        input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions', value='option1')
+                        label.form-check-label(for='inlineRadio1') 1
+                    .form-check.form-check-inline
+                        input#inlineRadio2.form-check-input(type='radio', name='inlineRadioOptions', value='option2')
+                        label.form-check-label(for='inlineRadio2') 2
+
+                    .row.mb-3.justify-content-center
+                        .col-12.col-md-2
+                            label.form-label(for='exampleInputEmail1') first name
+                        .col-12.col-md-8
+                            input#exampleInputEmail1.form-control(type='txt' aria-describedby='emailHelp')
+                    .row.mb-3.justify-content-center
+                        .col-12.col-md-2
+                            label.form-label(for='exampleInputEmail1') last name
+                        .col-12.col-md-8
+                            input#exampleInputEmail1.form-control(type='txt' aria-describedby='emailHelp')
+                    .row.mb-3.justify-content-center
+                        .col-12.col-md-2
+                            label.form-label(for='exampleInputEmail1') Email address
+                        .col-12.col-md-8
+                            input#exampleInputEmail1.form-control(type='email' aria-describedby='emailHelp')
+                    .row.mb-3.justify-content-center 
+                        .col-12.col-md-2
+                            label.form-label(for='exampleInputPassword1') Password
+                        .col-12.col-md-8
+                            input#exampleInputPassword1.form-control(type='password')
+                        .row
+                            .my-3.form-check.col-12.w-75.m-auto
+                                input#exampleCheck1.form-check-input(type='checkbox')
+                                label.form-check-label(for='exampleCheck1') Customer data privacy The personal data you provide is used to answer queries, process orders or allow access to specific information. You have the right to modify and delete all the personal information found in the "My Account" page.
+                            .my-3.form-check.col-12.w-75.m-auto
+                                input#exampleCheck1.form-check-input(type='checkbox')
+                                label.form-check-label(for='exampleCheck1') Sign up for our newsletter You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.
+                        .col-6.m-auto
+                            a.btn.btn-danger(type='submit') Submit
+block footer
+    include ../includes/footer.pug
+block scripts
+    include ../includes/scripts.pug

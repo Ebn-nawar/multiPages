@@ -1,0 +1,26 @@
+extends ../layouts/main.pug
+block meta
+    include ../includes/meta.pug
+block links
+    - var path = "..";
+    include ../includes/links.pug
+block title
+    - var title = 'About us';
+    title= title
+block header
+    include ../includes/header.pug
+block main 
+    main
+        .container.p-2
+            include ../includes/roadmap.pug
+            h4.pb-2 About us
+            h5 Our company
+            p Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet conse ctetur adipisicing elit. Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod.
+            h5 Our team
+            p Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet conse ctetur adipisicing elit. Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod. Eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            h5 Testimonials
+            p Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet conse ctetur adipisicing elit. Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod.
+block footer
+    include ../includes/footer.pug
+block scripts
+    include ../includes/scripts.pug

@@ -1,64 +1,63 @@
-doctype html
-html(lang="en")
-    head
-        include includes/meta.pug
-        title Document
-        include includes/links.pug
-    body
-        include includes/header.pug
-        // start of main
-        main
-            //- carousel section
-            .main__carousel.container.my-4
-                #carouselExampleControlsNoTouching.carousel.slide(data-bs-touch='false' data-bs-interval='false')
-                    .carousel-inner
-                        .carousel-item.active
-                            img.d-block.w-100.m-auto(src='https://images.unsplash.com/photo-1487014679447-9f8336841d58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1905&q=80' alt='...')
+extends layouts/main.pug
+block meta
+    include includes/meta.pug
+block links
+    - var path = "assets";
+    include includes/links.pug
+block title
+    title Home
+block header
+    include includes/header.pug
+block main
+    // start of main
+    main
+        //- carousel section
+        .main__carousel.container.my-4
+            #carouselExampleControlsNoTouching.carousel.slide(data-bs-touch='false' data-bs-interval='false')
+                .carousel-inner
+                    .carousel-item.active
+                        img.d-block.w-100.m-auto(src='https://images.unsplash.com/photo-1487014679447-9f8336841d58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1905&q=80' alt='')
+                    each alt in [1, 2, 3, 4, 5]
                         .carousel-item
-                            img.d-block.w-100.m-auto(src='https://images.unsplash.com/photo-1487014679447-9f8336841d58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1905&q=80' alt='...')
-                        .carousel-item
-                            img.d-block.w-100.m-auto(src='https://images.unsplash.com/photo-1487014679447-9f8336841d58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1905&q=80' alt='...')
-                    button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControlsNoTouching' data-bs-slide='prev')
-                        span.carousel-control-prev-icon(aria-hidden='true')
-                        span.visually-hidden Previous
-                    button.carousel-control-next(type='button' data-bs-target='#carouselExampleControlsNoTouching' data-bs-slide='next')
-                        span.carousel-control-next-icon(aria-hidden='true')
-                        span.visually-hidden Next
-            //- Top products 
-            .main__topProduct.container
-                .row
+                            img.d-block.w-100.m-auto(src='https://images.unsplash.com/photo-1487014679447-9f8336841d58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1905&q=80' alt= alt)
+                button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControlsNoTouching' data-bs-slide='prev')
+                    span.carousel-control-prev-icon(aria-hidden='true')
+                    span.visually-hidden Previous
+                button.carousel-control-next(type='button' data-bs-target='#carouselExampleControlsNoTouching' data-bs-slide='next')
+                    span.carousel-control-next-icon(aria-hidden='true')
+                    span.visually-hidden Next
+        //- Top products 
+        .main__topProduct.container
+            .row
+                each alt in [1, 2, 3, 4]
                     .col-6.col-md-3.text-center.my-1
-                        img.w-100(src="http://demo.templatin.com/megashop17/modules/tptnsubbanner/images/sample-4.jpg" alt="" srcset="")
-                    .col-6.col-md-3.text-center.my-1
-                        img.w-100(src="http://demo.templatin.com/megashop17/modules/tptnsubbanner/images/sample-4.jpg" alt="" srcset="")
-                    .col-6.col-md-3.text-center.my-1
-                        img.w-100(src="http://demo.templatin.com/megashop17/modules/tptnsubbanner/images/sample-4.jpg" alt="" srcset="")
-                    .col-6.col-md-3.text-center.my-1
-                        img.w-100(src="http://demo.templatin.com/megashop17/modules/tptnsubbanner/images/sample-4.jpg" alt="" srcset="")
-            //- Top categories
-            .main__categories.container.my-5
-                each val in ["popular products", "New products"]
-                    h3.border-bottom.border-2.pb-2= val
-                    include includes/main__categories
-            //- speacial products
-            .main__speacial.container.my-5 
-                .row 
-                    .col-12.col-md-6.my-2
-                        img(src="http://demo.templatin.com/megashop17/modules/tptnbotbanner/images/sample-1.jpg")
-                    .col-12.col-md-6.my-2
-                        img(src="http://demo.templatin.com/megashop17/modules/tptnbotbanner/images/sample-2.jpg")  
-            //- Categories
-            .main__categories.container.my-5
-                each val in ["speacial products", "Elctronic", "Clothes"]
-                    h3.border-bottom.border-2.pb-2= val
-                    include includes/main__categories
-            //- Block
-            .main__categories.container.my-5
-                h3.border-bottom.border-2.pb-2 Custom Content Block
-                p Multi-language custom HTML content. Use this module to optimize SEO, write more info about your shop or anything.
-                p Lorem ipsum voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.
-                p Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore. Lorem ipsum voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                p Dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex eacommodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.
-        // end of main
-        include includes/footer.pug
-        include includes/scripts.pug
+                        img.w-100(src="http://demo.templatin.com/megashop17/modules/tptnsubbanner/images/sample-4.jpg" alt= alt srcset="")
+        //- Top categories
+        .main__categories.container.my-5
+            each val in ["popular products", "New products"]
+                h3.border-bottom.border-2.pb-2= val
+                include includes/main__categories
+        //- speacial products
+        .main__speacial.container.my-5
+            .row 
+                .col-12.col-md-6.my-2
+                    img(src="http://demo.templatin.com/megashop17/modules/tptnbotbanner/images/sample-1.jpg")
+                .col-12.col-md-6.my-2
+                    img(src="http://demo.templatin.com/megashop17/modules/tptnbotbanner/images/sample-2.jpg")  
+        //- Categories
+        .main__categories.container.my-5
+            each val in ["speacial products", "Elctronic", "Clothes"]
+                h3.border-bottom.border-2.pb-2= val
+                include includes/main__categories
+        //- Block
+        .main__categories.container.my-5
+            h3.border-bottom.border-2.pb-2 Custom Content Block
+            p Multi-language custom HTML content. Use this module to optimize SEO, write more info about your shop or anything.
+            p Lorem ipsum voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.
+            p Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore. Lorem ipsum voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            p Dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex eacommodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.
+    // end of main
+block footer
+    include includes/footer.pug
+block scripts
+    include includes/scripts.pug

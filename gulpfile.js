@@ -13,6 +13,13 @@ function pugToHtml() {
         .pipe(gulp.dest('./dist'))
         .pipe(livereload())
 }
+function pugPagesToHtml() {
+    return gulp
+        .src('./build/pug/pages/*.pug')
+        .pipe(pug({}))
+        .pipe(gulp.dest('./dist/assets/pages'))
+        .pipe(livereload())
+}
 // js minyfier
 function jsMinify() {
     return gulp
@@ -37,4 +44,6 @@ exports.default = function () {
     gulp.watch(['./build/js/app.js'] , jsMinify )
     gulp.watch(['./build/pug/index.pug'] , pugToHtml )
     gulp.watch(['./build/css/main.sass'] , cssTrans )
+    gulp.watch(['./build/pug/pages/*.pug'] , pugPagesToHtml )
+    
 };
